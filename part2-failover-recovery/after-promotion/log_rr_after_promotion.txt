@@ -1,0 +1,18 @@
+mysql> INSERT INTO authors(name) VALUE('J.R.R. Tolkien');
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+Connection id:    7
+Current database: udacity
+
+Query OK, 1 row affected (0.07 sec)
+
+mysql> SELECT * FROM authors;
++----+----------------+
+| id | name           |
++----+----------------+
+|  1 | JK Rowling     |
+|  2 | J.R.R. Tolkien |
++----+----------------+
+2 rows in set (0.00 sec)
+
+mysql>
