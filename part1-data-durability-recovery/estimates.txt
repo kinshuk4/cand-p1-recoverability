@@ -1,0 +1,16 @@
+Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for this Multi-AZ, multi-region database:
+
+1. Minimum RTO for a single AZ outage is 3 minutes.
+Reason: It takes 1-2 minutes to start up a new RDS instance. Adding 1 minute as a buffer.
+
+2. Minimum RPO for a single AZ outage is 0 minutes.
+Reason: We already have secondary instance, so, data loss is minimised due to failover.
+
+3. Minimum RTO for a single region outage is 30 minutes.
+Reason: This includes time for following:
+a) Availability of site reliability engineer
+b) Promote read replica to master
+c) Change application configuration to point to new DB instance
+
+4. Minimum RPO for a single region outage is 5 minutes
+Reason: It depends on how frequent the database backup is. In case of 5 minutes interval, it also results in high cost.
